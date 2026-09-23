@@ -1,12 +1,153 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 /**
- * High-fidelity vector logos for COMPconn's certified technology partners:
- * 1. Fortinet Engage Advocate Partner
- * 2. Sophos
- * 3. GFI Partner
- * 4. BDRSuite by Vembu
+ * High-fidelity vector and asset logos for COMPconn's certified technology partners:
+ * 1. Microsoft Partner (microsoft.webp)
+ * 2. Fortinet Engage Advocate Partner
+ * 3. Sophos Certified Partner
+ * 4. Ermes Intelligent Anti Phishing (ermes.webp)
+ * 5. GFI Partner
+ * 6. BDRSuite by Vembu
  */
+
+export const MicrosoftPartnerLogo: React.FC<{ className?: string }> = ({ className = 'h-10' }) => {
+  const [useFallback, setUseFallback] = useState(false);
+
+  if (!useFallback) {
+    return (
+      <img
+        src="/microsoft.webp"
+        alt="Microsoft Partner"
+        referrerPolicy="no-referrer"
+        onError={() => setUseFallback(true)}
+        className={`max-h-[46px] w-auto object-contain select-none ${className}`}
+      />
+    );
+  }
+
+  return (
+    <div className={`inline-flex items-center select-none ${className}`} title="Microsoft Partner">
+      <svg viewBox="0 0 260 70" className="h-full w-auto max-h-[48px]" fill="none" xmlns="http://www.w3.org/2000/svg">
+        {/* Microsoft 4-Color Grid */}
+        <g transform="translate(6, 12)">
+          <rect x="0" y="0" width="21" height="21" fill="#F25022" rx="1" />
+          <rect x="25" y="0" width="21" height="21" fill="#7FBA00" rx="1" />
+          <rect x="0" y="25" width="21" height="21" fill="#00A4EF" rx="1" />
+          <rect x="25" y="25" width="21" height="21" fill="#FFB900" rx="1" />
+        </g>
+
+        {/* Microsoft Wordmark */}
+        <text
+          x="64"
+          y="32"
+          fill="#737373"
+          fontFamily="'Segoe UI', system-ui, -apple-system, sans-serif"
+          fontSize="24"
+          fontWeight="600"
+          letterSpacing="-0.01em"
+        >
+          Microsoft
+        </text>
+
+        {/* Partner Designation */}
+        <text
+          x="64"
+          y="55"
+          fill="#737373"
+          fontFamily="'Segoe UI', system-ui, -apple-system, sans-serif"
+          fontSize="23"
+          fontWeight="600"
+          letterSpacing="-0.01em"
+        >
+          Partner
+        </text>
+      </svg>
+    </div>
+  );
+};
+
+export const ErmesLogo: React.FC<{ className?: string }> = ({ className = 'h-10' }) => {
+  const [useFallback, setUseFallback] = useState(false);
+
+  if (!useFallback) {
+    return (
+      <img
+        src="/ermes.webp"
+        alt="Ermes Intelligent Anti Phishing"
+        referrerPolicy="no-referrer"
+        onError={() => setUseFallback(true)}
+        className={`max-h-[44px] w-auto object-contain select-none ${className}`}
+      />
+    );
+  }
+
+  return (
+    <div className={`inline-flex items-center select-none ${className}`} title="Ermes Intelligent Anti Phishing">
+      <svg viewBox="0 0 280 72" className="h-full w-auto max-h-[48px]" fill="none" xmlns="http://www.w3.org/2000/svg">
+        {/* Ermes Winged Emblem */}
+        <g transform="translate(6, 12)">
+          {/* Curved Visor Arc */}
+          <path
+            d="M 40,4 C 42,16 38,32 20,44 C 14,34 16,18 40,4 Z"
+            stroke="#062B55"
+            strokeWidth="3.5"
+            strokeLinejoin="round"
+            fill="none"
+          />
+          {/* Upper Wing Feather */}
+          <path
+            d="M 4,14 C 2,14 2,19 10,19 L 23,19"
+            stroke="#062B55"
+            strokeWidth="3.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            fill="none"
+          />
+          {/* Lower Wing Feather */}
+          <path
+            d="M 11,26 C 8,26 8,31 17,31 L 26,31"
+            stroke="#062B55"
+            strokeWidth="3.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            fill="none"
+          />
+          {/* Center Joint Pivot Circle */}
+          <circle cx="26" cy="28" r="3.2" fill="#00D26A" stroke="#062B55" strokeWidth="2.5" />
+        </g>
+
+        {/* ERMES Wordmark */}
+        <text
+          x="62"
+          y="36"
+          fill="#062B55"
+          fontFamily="system-ui, -apple-system, sans-serif"
+          fontSize="28"
+          fontWeight="900"
+          letterSpacing="0.06em"
+        >
+          ERMES
+        </text>
+
+        {/* Intelligent Anti Phishing Subtext */}
+        <text
+          x="63"
+          y="54"
+          fill="#334155"
+          fontFamily="system-ui, -apple-system, sans-serif"
+          fontSize="11.5"
+          fontWeight="600"
+          letterSpacing="0.01em"
+        >
+          Intelligent Anti Phishing
+        </text>
+
+        {/* Cyber Security Accent Indicator */}
+        <circle cx="220" cy="51" r="2.5" fill="#00D26A" />
+      </svg>
+    </div>
+  );
+};
 
 export const FortinetEngageLogo: React.FC<{ className?: string }> = ({ className = 'h-10' }) => (
   <div className={`inline-flex items-center select-none ${className}`} title="Fortinet Engage Advocate Partner">
@@ -188,6 +329,13 @@ export const BdrSuiteLogo: React.FC<{ className?: string }> = ({ className = 'h-
 
 export const PARTNERS = [
   {
+    id: 'microsoft',
+    name: 'Microsoft Partner',
+    tier: 'Certified Cloud & Solution Partner',
+    Component: MicrosoftPartnerLogo,
+    category: 'Microsoft 365, Azure Cloud & Enterprise Productivity'
+  },
+  {
     id: 'fortinet',
     name: 'Fortinet Engage Advocate Partner',
     tier: 'Engage Advocate Partner',
@@ -197,9 +345,16 @@ export const PARTNERS = [
   {
     id: 'sophos',
     name: 'Sophos Certified Partner',
-    tier: 'Certified Partner',
+    tier: 'Certified Security Partner',
     Component: SophosLogo,
     category: 'Next-Gen Endpoint Detection & Managed Threat Response'
+  },
+  {
+    id: 'ermes',
+    name: 'Ermes Intelligent Anti Phishing',
+    tier: 'Technology & AI Security Partner',
+    Component: ErmesLogo,
+    category: 'Intelligent Anti-Phishing & Automated Web Protection'
   },
   {
     id: 'gfi',

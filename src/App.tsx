@@ -558,10 +558,9 @@ export default function App() {
                         alt="COMPconn Jamaica"
                         referrerPolicy="no-referrer"
                         onError={(e) => {
-                          e.currentTarget.onerror = null;
-                          e.currentTarget.src = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80";
+                          e.currentTarget.style.display = 'none';
                         }}
-                        className="w-full aspect-[16/10] sm:aspect-[16/10] lg:aspect-[16/10] object-cover object-right sm:object-center transition-transform duration-700 group-hover:scale-[1.02]"
+                        className="w-full h-full object-contain select-none"
                     />
                   </div>
                   <div className="flex flex-col">
@@ -911,8 +910,8 @@ export default function App() {
                 </h3>
               </div>
 
-              {/* Responsive 4-Column Grid with Appropriate Sizing and Micro-Interactions */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 items-stretch">
+              {/* Responsive 6-Partner Grid with Balanced 3-Column Layout and Micro-Interactions */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 items-stretch">
                 {PARTNERS.map((partner) => {
                   const Logo = partner.Component;
                   return (
