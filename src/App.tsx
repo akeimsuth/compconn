@@ -212,25 +212,18 @@ export default function App() {
             className="flex items-center gap-3 group select-none text-left cursor-pointer"
             aria-label="COMPconn Home"
           >
-            {/* Tech Logo Icon */}
-            <div className="w-10 h-10 relative flex items-center justify-center">
-              <svg viewBox="0 0 44 44" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="22" cy="22" r="18" stroke="#087FEA" strokeWidth="3" strokeDasharray="95 20" strokeLinecap="round" className="opacity-90" />
-                <path d="M12 22C12 16.4772 16.4772 12 22 12C25.5 12 28.5 13.8 30.2 16.5" stroke="#16B9FF" strokeWidth="3.5" strokeLinecap="round" />
-                <circle cx="22" cy="22" r="6.5" fill="#087FEA" />
-                <circle cx="22" cy="22" r="3" fill="#FFFFFF" />
-              </svg>
-            </div>
-
-            {/* Wordmark and Subtitle */}
-            <div className="flex flex-col">
-              <span className="text-[21px] font-extrabold tracking-[-0.03em] text-[#062B55] leading-none">
-                COMPCONN
-              </span>
-              <span className="text-[8px] font-bold tracking-[0.14em] text-[#062B55]/70 mt-1 uppercase">
-                IT CONSULTING &amp; TECHNOLOGY SOLUTIONS
-              </span>
-            </div>
+              <div className="w-60 h-10 flex items-center justify-center">
+                  <img
+                    src="/compconn_logo.png"
+                    alt="COMPconn IT Consultant - Smarter IT. Stronger Business."
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80";
+                    }}
+                    
+                  />
+                </div>
           </button>
 
           {/* DESKTOP NAVIGATION LINKS */}
@@ -583,7 +576,7 @@ export default function App() {
                     Our Services
                   </span>
                   <h2 className="text-[32px] sm:text-[40px] font-extrabold text-[#062B55] leading-[1.15] tracking-tight">
-                    Comprehensive IT Solutions<br className="hidden sm:inline" />
+                    Comprehensive IT Solutions <br className="hidden sm:inline" />
                     for a Stronger Tomorrow
                   </h2>
                 </div>
@@ -1028,22 +1021,20 @@ export default function App() {
         <div className="max-w-[1260px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-10 border-b border-[#DCEAF5]">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 relative flex items-center justify-center">
-                <svg viewBox="0 0 44 44" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="22" cy="22" r="18" stroke="#087FEA" strokeWidth="3" strokeDasharray="95 20" strokeLinecap="round" />
-                  <path d="M12 22C12 16.4772 16.4772 12 22 12C25.5 12 28.5 13.8 30.2 16.5" stroke="#16B9FF" strokeWidth="3.5" strokeLinecap="round" />
-                  <circle cx="22" cy="22" r="6.5" fill="#087FEA" />
-                  <circle cx="22" cy="22" r="3" fill="#FFFFFF" />
-                </svg>
-              </div>
 
               <div className="flex flex-col">
-                <span className="text-[19px] font-extrabold tracking-[-0.03em] text-[#062B55] leading-none">
-                  COMPCONN
-                </span>
-                <span className="text-[7.5px] font-bold tracking-[0.14em] text-[#062B55]/70 mt-1 uppercase">
-                  IT CONSULTING &amp; TECHNOLOGY SOLUTIONS
-                </span>
+                <div className="w-60 h-20 flex items-center justify-center">
+                  <img
+                    src="/compconn_logo.png"
+                    alt="COMPconn IT Consultant - Smarter IT. Stronger Business."
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80";
+                    }}
+                    
+                  />
+                  </div>
               </div>
             </div>
 
