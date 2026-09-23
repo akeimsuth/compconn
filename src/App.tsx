@@ -1109,7 +1109,7 @@ export default function App() {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 text-[12.5px] text-[#6F8299]">
-            <div>© 2025 COMPCONN. All rights reserved.</div>
+            <div>© 2026 COMPCONN. All rights reserved.</div>
             <div className="font-medium text-[#062B55]">Technology. People. Progress.</div>
           </div>
         </div>
