@@ -46,27 +46,27 @@ interface TestimonialItem {
 const TESTIMONIALS: TestimonialItem[] = [
   {
     id: '1',
-    quote: 'COMPconn transformed our IT infrastructure and helped us streamline our operations. Their team is professional, responsive and truly understands business needs. Highly recommended!',
-    name: 'Karen Mitchell',
+    quote: "O'Rane and his team are very technical and responsive. Technical issues are normally resolved within an hour. They make it look easy." ,
+    name: 'Anonymous',
     title: 'CEO',
-    company: 'Island Foods Ltd.',
+    company: '',
     avatarUrl: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=400&q=80'
   },
   {
     id: '2',
-    quote: 'Implementing our custom logistics and multi-warehouse tracking platform with COMPconn yielded an immediate 60% boost in operational efficiency. They are Jamaica’s top enterprise tech team.',
-    name: 'David Sterling',
-    title: 'Managing Director',
-    company: 'Caribbean Logistics & Freight',
-    avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80'
+    quote: "Communicating with O'Rane and his team is very easy....I don't feel drained or misunderstood. They are also good and explaining things without the technical jargon. Keep up the good work guys...",
+    name: 'Judy',
+    title: '',
+    company: '',
+    avatarUrl: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=400&q=80'
   },
   {
     id: '3',
-    quote: 'With strict Jamaica Data Protection Act deadlines, COMPconn brought our entire financial services architecture into bulletproof security compliance with zero operational downtime.',
-    name: 'Althea Campbell',
-    title: 'Chief Risk Officer',
-    company: 'Capital Heritage Group',
-    avatarUrl: 'https://images.unsplash.com/photo-1580894732470-353f4931a5fb?auto=format&fit=crop&w=400&q=80'
+    quote: "We trust COMPCONN with our data and that says a lot. The team is very honest and reliable. We have no concerns about the team's integrity.",
+    name: '',
+    title: 'CEO',
+    company: 'Private',
+    avatarUrl: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=400&q=80'
   }
 ];
 
@@ -391,7 +391,7 @@ export default function App() {
                   <span>Book a Consultation</span>
                 </button>
                 <div className="text-center text-xs text-[#6F8299] pt-1">
-                  Kingston, Jamaica • 876-670-6444
+                  Enterprise Support • 876-670-6444
                 </div>
               </div>
             </div>
@@ -424,7 +424,7 @@ export default function App() {
                 {/* LEFT COLUMN: HERO COPY */}
                 <div className="lg:col-span-6 xl:col-span-6 flex flex-col items-start">
                   <div className="inline-flex items-center gap-2 text-[#087FEA] font-bold text-[11.5px] sm:text-[12.5px] tracking-[0.14em] uppercase mb-4">
-                    <span>Jamaica&apos;s Trusted IT Consulting Partner</span>
+                    <span>Your Trusted IT Consulting Partner</span>
                   </div>
 
                   <h1 className="text-[38px] sm:text-[46px] lg:text-[54px] font-extrabold text-[#062B55] leading-[1.08] tracking-[-0.03em] mb-6">
@@ -464,7 +464,7 @@ export default function App() {
 
                   <div className="flex items-center gap-2.5 text-[13px] text-[#6F8299] pt-2">
                     <MapPin className="w-4 h-4 text-[#087FEA] shrink-0" />
-                    <span className="font-medium text-[#062B55]">Proudly based in Jamaica</span>
+                    <span className="font-medium text-[#062B55]">Enterprise Technology Consultants</span>
                     <span className="text-slate-300">|</span>
                     <span>Supporting businesses locally and globally</span>
                   </div>
@@ -488,7 +488,7 @@ export default function App() {
                       {/* Bottom Trust Badge */}
                       <div className="absolute bottom-4 left-4 hidden sm:flex items-center gap-2 bg-white/95 backdrop-blur-md py-1.5 px-3 rounded-full border border-[#DCEAF5] shadow-md text-xs font-semibold text-[#062B55]">
                         <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                        <span>Jamaica &amp; Caribbean Enterprise IT</span>
+                        <span>Modern Enterprise IT Solutions</span>
                       </div>
                     </div>
                   </div>
@@ -545,20 +545,12 @@ export default function App() {
                 </div>
 
                 <div className="col-span-2 sm:col-span-1 flex items-center gap-3.5 md:justify-center md:px-4">
-                  <div className="w-16 h-16 flex items-center justify-center shrink-0">
-                    <img
-                        src="/compconn_jamaica.png"
-                        alt="COMPconn Jamaica"
-                        referrerPolicy="no-referrer"
-                        onError={(e) => {
-                          e.currentTarget.style.display = 'none';
-                        }}
-                        className="w-full h-full object-contain select-none"
-                    />
+                  <div className="w-11 h-11 rounded-full bg-[#EAF6FF] flex items-center justify-center shrink-0">
+                    <ShieldCheck className="w-5 h-5 text-[#087FEA]" />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-[22px] sm:text-[24px] font-extrabold text-[#087FEA] leading-none">Jamaica</span>
-                    <span className="text-[12px] sm:text-[13px] font-medium text-[#4B6380] mt-1">Based &amp; Operating</span>
+                    <span className="text-[26px] sm:text-[28px] font-extrabold text-[#087FEA] leading-none">24/7</span>
+                    <span className="text-[12px] sm:text-[13px] font-medium text-[#4B6380] mt-1">Dedicated IT Support</span>
                   </div>
                 </div>
               </div>
@@ -755,7 +747,7 @@ export default function App() {
                     Management Platform
                   </h3>
                   <p className="text-[15px] text-[#4B6380] leading-[1.65] mb-6">
-                    We built a secure, cloud-based platform to help a Jamaican logistics company streamline operations, manage shipments and improve team collaboration across multiple locations.
+                    We built a secure, cloud-based platform to help a leading enterprise logistics company streamline operations, manage shipments and improve team collaboration across multiple locations.
                   </p>
 
                   <div className="flex flex-col gap-3 mb-8 w-full">
@@ -812,7 +804,7 @@ export default function App() {
 
           {/* =========================================================================
               7. TESTIMONIALS SECTION WITH REAL EXECUTIVE PORTRAITS
-          ========================================================================= */}
+          ========================================================= */}
           <section id="testimonials" className="py-20 md:py-24 bg-[#F8FBFE] border-t border-[#DCEAF5]">
             <div className="max-w-[1260px] mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -822,8 +814,8 @@ export default function App() {
                     What Our Clients Say
                   </span>
                   <h2 className="text-[32px] sm:text-[38px] font-extrabold text-[#062B55] leading-[1.15] tracking-tight mb-8">
-                    Trusted by Businesses<br />
-                    Across Jamaica and Beyond
+                    Trusted by Modern<br />
+                    Growing Enterprises
                   </h2>
 
                   <div className="flex items-center gap-4">
@@ -1004,7 +996,7 @@ export default function App() {
                       <div className="w-9 h-9 rounded-full bg-[#EAF6FF] flex items-center justify-center shrink-0">
                         <MapPin className="w-4 h-4 text-[#087FEA]" />
                       </div>
-                      <span>Kingston, Jamaica</span>
+                      <span>Corporate Technology Center</span>
                     </div>
                   </div>
                 </div>
@@ -1138,7 +1130,7 @@ export default function App() {
                   Book an IT Strategy Session
                 </h3>
                 <p className="text-[14px] text-[#4B6380] mb-6">
-                  Meet directly with COMPconn senior technology consultants in Kingston, Jamaica or via secure virtual conference.
+                  Meet directly with COMPconn senior technology consultants in-person or via secure virtual conference.
                 </p>
 
                 <form onSubmit={handleConsultationSubmit} className="space-y-4">
@@ -1161,7 +1153,7 @@ export default function App() {
                         required
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                        placeholder="e.g. Kingston Freight Ltd."
+                        placeholder="e.g. Global Freight Ltd."
                         className="w-full px-3.5 py-2.5 rounded-xl border border-[#DCEAF5] text-sm text-[#062B55] focus:outline-none focus:border-[#087FEA]"
                       />
                     </div>
@@ -1213,7 +1205,7 @@ export default function App() {
                         className="w-full px-3.5 py-2.5 rounded-xl border border-[#DCEAF5] text-sm text-[#062B55] focus:outline-none focus:border-[#087FEA] bg-white cursor-pointer"
                       >
                         <option>Virtual (Google Meet / Teams)</option>
-                        <option>In-Person (Kingston Headquarters)</option>
+                        <option>In-Person (Corporate Headquarters)</option>
                         <option>On-Site Client Visit</option>
                       </select>
                     </div>
@@ -1249,7 +1241,7 @@ export default function App() {
                       )}
                     </button>
                     <p className="text-center text-[11.5px] text-[#6F8299] mt-2.5">
-                      Response guaranteed within 2 business hours • Kingston, Jamaica (UTC-5)
+                      Response guaranteed within 2 business hours • Standard Hours (UTC-5)
                     </p>
                   </div>
                 </form>
@@ -1289,13 +1281,13 @@ export default function App() {
             </button>
 
             <span className="text-[#087FEA] text-xs font-bold uppercase tracking-wider block mb-2">
-              Case Study: Kingston &amp; Regional Logistics
+              Case Study: Enterprise Freight &amp; Logistics
             </span>
             <h3 className="text-[25px] font-extrabold text-[#062B55] leading-snug mb-3">
               Cloud-Native Freight Dispatch &amp; Shipment Tracking Platform
             </h3>
             <p className="text-[14.5px] text-[#4B6380] leading-[1.65] mb-6">
-              How COMPconn migrated a Jamaican distribution leader with 8 regional depots from paper waybills and fragmented phone dispatch to an enterprise cloud dashboard.
+              How COMPconn migrated a major regional distribution leader with 8 depots from paper waybills and fragmented phone dispatch to an enterprise cloud dashboard.
             </p>
 
             <div className="grid grid-cols-3 gap-3 mb-6 p-4 rounded-xl bg-[#F5FAFE] border border-[#DCEAF5] text-center">
@@ -1316,7 +1308,7 @@ export default function App() {
             <div className="space-y-4 text-xs sm:text-sm text-[#4B6380]">
               <div>
                 <h4 className="font-bold text-[#062B55] mb-1">The Challenge:</h4>
-                <p>High fuel waste, delivery tracking delays across parishes, and severe audit vulnerabilities during end-of-month reconciliation.</p>
+                <p>High fuel waste, delivery tracking delays across distribution routes, and severe audit vulnerabilities during end-of-month reconciliation.</p>
               </div>
 
               <div>
@@ -1361,7 +1353,7 @@ export default function App() {
               Let&apos;s Start a Conversation
             </h3>
             <p className="text-[14px] text-[#4B6380] mb-6">
-              Reach out directly to our Kingston team for inquiries, enterprise RFPs, or partnership requests.
+              Reach out directly to our engineering team for inquiries, enterprise RFPs, or partnership requests.
             </p>
 
             <div className="space-y-3 mb-6">
@@ -1389,7 +1381,7 @@ export default function App() {
                 <div className="w-8 h-8 rounded-full bg-[#EAF6FF] flex items-center justify-center text-[#087FEA]">
                   <MapPin className="w-4 h-4" />
                 </div>
-                <span>Office: Kingston, Jamaica</span>
+                <span>Office: Corporate Technology Center</span>
               </div>
             </div>
 

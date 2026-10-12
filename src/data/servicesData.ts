@@ -12,7 +12,7 @@ export interface ServiceItem {
     benefits: string[];
     capabilities: { title: string; desc: string }[];
     deliverables: string[];
-    jamaicaRelevance: string;
+    regionalRelevance: string;
     faqs: { q: string; a: string }[];
   };
 }
@@ -21,23 +21,23 @@ export const SERVICES: ServiceItem[] = [
   {
     id: 'it-consulting',
     title: 'IT Consulting',
-    tagline: 'Strategic Technology Advisory for Caribbean Enterprises',
+    tagline: 'Strategic Technology Advisory for Growing Enterprises',
     description: 'Strategic guidance to align your technology with your business goals.',
     iconName: 'users',
     image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80',
     secondaryImage: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80',
     stats: [
       { label: 'Strategic ROI', value: '4.2x' },
-      { label: 'JDPA Compliance', value: '100%' },
+      { label: 'DPA Compliance', value: '100%' },
       { label: 'Cost Reduction', value: '32%' }
     ],
     fullDetails: {
-      summary: 'Comprehensive enterprise IT advisory tailored for Caribbean corporations navigating digital modernization, vendor consolidation, and strict regulatory compliance.',
+      summary: 'Comprehensive enterprise IT advisory tailored for modern corporations navigating digital modernization, vendor consolidation, and strict regulatory compliance.',
       benefits: [
         'Multi-year IT strategy aligned directly with board-level KPIs',
         'Comprehensive technology vendor audit and licensing cost optimization',
-        'Business continuity and disaster recovery planning for hurricane resilience',
-        'Full compliance with the Jamaica Data Protection Act (JDPA) standards'
+        'Business continuity and disaster recovery planning for operational resilience',
+        'Full compliance with statutory Data Protection Act standards'
       ],
       capabilities: [
         { title: 'Digital Transformation Roadmaps', desc: 'Phase-by-phase blueprints to retire legacy bottlenecks and adopt modern agile workflows.' },
@@ -49,9 +49,9 @@ export const SERVICES: ServiceItem[] = [
         'Technology Maturity & Gap Analysis',
         'Executive Technology Steering Retainer'
       ],
-      jamaicaRelevance: 'Designed specifically to help Jamaican enterprises modernize legacy operational systems into regional powerhouses.',
+      regionalRelevance: 'Designed specifically to help enterprises modernize legacy operational systems into scalable regional powerhouses.',
       faqs: [
-        { q: 'How does COMPconn align with the Jamaica Data Protection Act (JDPA)?', a: 'Our consultants include certified data privacy advisors who audit your data flows, access controls, and retention rules to ensure full statutory compliance.' },
+        { q: 'How does COMPconn align with statutory Data Protection Acts (DPA)?', a: 'Our consultants include certified data privacy advisors who audit your data flows, access controls, and retention rules to ensure full statutory compliance.' },
         { q: 'Can we retain COMPconn as our virtual Chief Information Officer (vCIO)?', a: 'Yes, we provide ongoing executive technology leadership to attend board meetings and direct your IT roadmap.' }
       ]
     }
@@ -73,7 +73,7 @@ export const SERVICES: ServiceItem[] = [
       summary: 'Bespoke web applications, internal operational tooling, distributor portals, and API integrations built on high-performance cloud stacks.',
       benefits: [
         'Eliminate manual Excel spreadsheets and double-entry bottlenecks',
-        'Seamless integration with Jamaican payment gateways and international ERPs',
+        'Seamless integration with regional payment gateways and international ERPs',
         'High-security role-based access control (RBAC) and audit trails',
         'Responsive mobile-first interfaces for distributed field agents'
       ],
@@ -87,17 +87,17 @@ export const SERVICES: ServiceItem[] = [
         'Restful / GraphQL APIs & Webhook Pipelines',
         '100% Client Source Code Ownership & Documentation'
       ],
-      jamaicaRelevance: 'Solving distinct local workflows from distributed branch networks across parishes to multinational Caribbean commerce.',
+      regionalRelevance: 'Solving distinct local workflows from distributed branch networks to multinational commerce.',
       faqs: [
         { q: 'Do we own the software code when the project finishes?', a: 'Yes. 100% of custom source code, documentation, and IP belongs entirely to your business.' },
-        { q: 'Can your software integrate with local Jamaican payment gateways?', a: 'Yes, we integrate with NCB ePay, Jam-Dex, First Global, CIBC, Scotiabank, and international gateways like Stripe.' }
+        { q: 'Can your software integrate with regional and international payment gateways?', a: 'Yes, we integrate with regional banks, commercial payment gateways, and international processors like Stripe.' }
       ]
     }
   },
   {
     id: 'cybersecurity',
     title: 'Cybersecurity',
-    tagline: 'Proactive Defense & JDPA Regulatory Safeguards',
+    tagline: 'Proactive Defense & Statutory Regulatory Safeguards',
     description: 'Proactive protection for your data, your people and your reputation.',
     iconName: 'shield',
     image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80',
@@ -105,12 +105,12 @@ export const SERVICES: ServiceItem[] = [
     stats: [
       { label: 'Threat Block Rate', value: '99.9%' },
       { label: 'Detection Speed', value: '<5 min' },
-      { label: 'JDPA Shield', value: 'Certified' }
+      { label: 'DPA Shield', value: 'Certified' }
     ],
     fullDetails: {
       summary: 'Defense-in-depth security architectures, employee phishing simulations, endpoint hardening, vulnerability penetration tests, and incident response.',
       benefits: [
-        'Guaranteed adherence to the Jamaica Data Protection Act (JDPA) mandates',
+        'Guaranteed adherence to statutory Data Protection Act mandates',
         'Zero-Trust network segmentation and Multi-Factor Identity protection',
         '24/7 proactive security operations (SOC) monitoring and containment',
         'Protection against ransomware, business email compromise (BEC), and wire fraud'
@@ -122,10 +122,10 @@ export const SERVICES: ServiceItem[] = [
       ],
       deliverables: [
         'Penetration Testing & Remediation Reports',
-        'JDPA Compliance Matrix & Policy Handbook',
+        'DPA Compliance Matrix & Policy Handbook',
         'Rapid Threat Containment & Recovery SLA'
       ],
-      jamaicaRelevance: 'Defending Caribbean corporations against escalating ransomware syndicates and avoiding catastrophic statutory penalties.',
+      regionalRelevance: 'Defending corporations against escalating ransomware syndicates and avoiding catastrophic statutory penalties.',
       faqs: [
         { q: 'What happens in the event of a security alert?', a: 'Our automated EDR isolates the machine within seconds while our rapid incident response team analyzes and remediates the threat.' },
         { q: 'Can you help prepare our company for ISO 27001 or SOC 2 certification?', a: 'Yes, we implement the controls and provide the technical artifacts required for successful auditor sign-off.' }
@@ -163,7 +163,7 @@ export const SERVICES: ServiceItem[] = [
         'Automated Backup & Geo-Replication Architecture',
         'Monthly Cloud Infrastructure Health & Cost Report'
       ],
-      jamaicaRelevance: 'Overcoming local power fluctuations and weather disruptions through off-island, bulletproof cloud architectures.',
+      regionalRelevance: 'Overcoming power fluctuations and regional disruptions through off-site, bulletproof cloud architectures.',
       faqs: [
         { q: 'Where will our data reside geographically?', a: 'We configure data residency according to your regulatory needs, typically leveraging US-East or secure regional compliant cloud zones.' },
         { q: 'Can you migrate our legacy Windows / SQL servers without downtime?', a: 'Yes, we execute parallel cutover strategies that ensure zero interruption to daily business operations.' }
@@ -201,7 +201,7 @@ export const SERVICES: ServiceItem[] = [
         'OCR & Auto-Invoicing Connectors',
         'Staff Training & Automation Maintenance Support'
       ],
-      jamaicaRelevance: 'Empowering Jamaican businesses to run at 24/7 velocity with lean, highly productive teams.',
+      regionalRelevance: 'Empowering enterprises to run at 24/7 velocity with lean, highly productive teams.',
       faqs: [
         { q: 'Will automation require us to replace our existing software?', a: 'No, our automation solutions integrate directly into the software you already use via APIs and secure connectors.' },
         { q: 'How quickly do we see return on investment (ROI)?', a: 'Most clients recover their investment within 60 to 90 days from saved labor hours and eliminated errors.' }
@@ -225,13 +225,13 @@ export const SERVICES: ServiceItem[] = [
       summary: 'Complete outsourced enterprise IT department providing proactive workstation monitoring, server patching, network administration, and rapid local helpdesk support.',
       benefits: [
         'Predictable, transparent monthly IT operational budget without surprise bills',
-        'Guaranteed SLA response times with on-site Kingston technicians when required',
+        'Guaranteed SLA response times with rapid technician dispatch when required',
         'Proactive hardware lifecycle tracking and software license compliance',
         'Continuous uptime tracking across all branch networks'
       ],
       capabilities: [
         { title: '24/7 Network Operations Center (NOC)', desc: 'Continuous monitoring of servers, routers, firewalls, and cloud services.' },
-        { title: 'Remote & On-Site Helpdesk', desc: 'Friendly, expert Jamaican tech support ready to resolve staff issues immediately.' },
+        { title: 'Remote & On-Site Helpdesk', desc: 'Friendly, expert tech support ready to resolve staff issues immediately.' },
         { title: 'Proactive Patch & Asset Management', desc: 'Automatic system updates, antivirus definition maintenance, and device inventory.' }
       ],
       deliverables: [
@@ -239,9 +239,9 @@ export const SERVICES: ServiceItem[] = [
         'Monthly IT Health, Security & Performance Audits',
         'Dedicated Technical Account Manager'
       ],
-      jamaicaRelevance: 'Allowing Caribbean business leaders to focus on revenue while COMPconn guarantees technology never stalls.',
+      regionalRelevance: 'Allowing business leaders to focus on revenue while COMPconn guarantees technology never stalls.',
       faqs: [
-        { q: 'Do you provide on-site support in Kingston and other parishes?', a: 'Yes! While 95% of issues are resolved remotely in minutes, our field engineers provide rapid on-site dispatch across Jamaica.' },
+        { q: 'Do you provide on-site support when required?', a: 'Yes! While 95% of issues are resolved remotely in minutes, our field engineers provide rapid on-site dispatch when needed.' },
         { q: 'Can you co-manage IT alongside our existing internal staff?', a: 'Yes, we frequently partner with in-house IT managers to offload routine support and provide tier-3 escalation.' }
       ]
     }

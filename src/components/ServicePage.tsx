@@ -148,10 +148,10 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                     </div>
                     <div>
                       <div className="text-xs uppercase tracking-wider text-cyan-300 font-bold">
-                        Kingston, Jamaica
+                        Enterprise Operations
                       </div>
                       <div className="text-sm font-semibold text-white">
-                        Enterprise Grade SLA &amp; Local On-Site Support
+                        Enterprise Grade SLA &amp; Dedicated Support
                       </div>
                     </div>
                   </div>
@@ -262,10 +262,10 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                 ))}
               </div>
 
-              {/* Jamaica Relevance Callout */}
+              {/* Regional Relevance Callout */}
               <div className="p-5 rounded-2xl bg-amber-50/70 border border-amber-200/80 text-xs sm:text-[13.5px] text-[#062B55] leading-relaxed">
-                <span className="font-bold text-amber-900">Caribbean Context: </span>
-                {service.fullDetails.jamaicaRelevance}
+                <span className="font-bold text-amber-900">Enterprise Context: </span>
+                {service.fullDetails.regionalRelevance}
               </div>
             </div>
 
