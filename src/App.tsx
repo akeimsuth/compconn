@@ -32,6 +32,7 @@ import {
 } from 'lucide-react';
 import { SERVICES, ServiceItem } from './data/servicesData';
 import { ServicePage } from './components/ServicePage';
+import { AboutPage } from './components/AboutPage';
 import { PARTNERS } from './components/PartnerLogos';
 
 interface TestimonialItem {
@@ -99,7 +100,12 @@ export default function App() {
   // Sync hash routing
   useEffect(() => {
     const handleHashChange = () => {
-      const hash = window.location.hash.replace('#/', '');
+      const hash = window.location.hash.replace('#/', '').replace('#', '');
+      if (hash === 'about' || hash === 'about-us') {
+        setCurrentPage('about');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
       if (hash.startsWith('services/')) {
         const serviceId = hash.replace('services/', '');
         if (SERVICES.some((s) => s.id === serviceId)) {
@@ -148,6 +154,14 @@ export default function App() {
     setSolutionsDropdownOpen(false);
     setCurrentPage(serviceId);
     window.location.hash = `#/services/${serviceId}`;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const navigateToAbout = () => {
+    setMobileMenuOpen(false);
+    setSolutionsDropdownOpen(false);
+    setCurrentPage('about');
+    window.location.hash = '#/about-us';
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -293,9 +307,20 @@ export default function App() {
               </div>
             </div>
 
+            <button
+              onClick={navigateToAbout}
+              className={`text-[14px] font-semibold transition-colors relative py-1 cursor-pointer ${
+                currentPage === 'about' ? 'text-[#087FEA]' : 'text-[#062B55] hover:text-[#087FEA]'
+              }`}
+            >
+              About Us
+              {currentPage === 'about' && (
+                <span className="absolute bottom-[-6px] left-0 right-0 h-[2.5px] bg-[#087FEA] rounded-full" />
+              )}
+            </button>
+
             {[
               { label: 'Industries', id: 'industries' },
-              { label: 'About', id: 'process' },
               { label: 'Case Studies', id: 'case-study' },
               { label: 'Contact', id: 'contact' }
             ].map((item) => (
@@ -364,9 +389,17 @@ export default function App() {
                 </div>
               </div>
 
+              <button
+                onClick={navigateToAbout}
+                className={`text-left text-[15px] font-semibold py-2 px-3 rounded-lg cursor-pointer ${
+                  currentPage === 'about' ? 'bg-[#EAF6FF] text-[#087FEA]' : 'text-[#062B55] hover:bg-slate-50'
+                }`}
+              >
+                About Us
+              </button>
+
               {[
                 { label: 'Industries', id: 'industries' },
-                { label: 'About', id: 'process' },
                 { label: 'Case Studies', id: 'case-study' },
                 { label: 'Contact', id: 'contact' }
               ].map((item) => (
@@ -400,9 +433,15 @@ export default function App() {
       </header>
 
       {/* =========================================================================
-          VIEW ROUTING: EITHER INDIVIDUAL DEDICATED SERVICE PAGE OR HOMEPAGE
+          VIEW ROUTING: DEDICATED ABOUT US PAGE, INDIVIDUAL SERVICE PAGE, OR HOMEPAGE
       ========================================================================= */}
-      {currentPage !== 'home' && currentServiceObj ? (
+      {currentPage === 'about' ? (
+        <AboutPage
+          onBackToHome={() => navigateToHome('home')}
+          onSelectService={(serviceId) => navigateToService(serviceId)}
+          onBookConsultation={(svc) => openConsultationWithService(svc)}
+        />
+      ) : currentPage !== 'home' && currentServiceObj ? (
         <ServicePage
           service={currentServiceObj}
           onBackToHome={() => navigateToHome('solutions')}
@@ -662,13 +701,21 @@ export default function App() {
                   <p className="text-[15px] text-[#4B6380] leading-[1.65] mb-8">
                     We take a consultative, collaborative approach to deliver technology solutions that fit your unique needs and drive measurable results.
                   </p>
-                  <button
-                    onClick={() => openConsultationWithService('4-Step Transformation')}
-                    className="inline-flex items-center gap-2 bg-[#087FEA] hover:bg-[#0770D0] text-white text-[14px] font-semibold px-6 py-3 rounded-full shadow-md cursor-pointer group"
-                  >
-                    <span>Our Approach</span>
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </button>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <button
+                      onClick={() => openConsultationWithService('4-Step Transformation')}
+                      className="inline-flex items-center gap-2 bg-[#087FEA] hover:bg-[#0770D0] text-white text-[14px] font-semibold px-6 py-3 rounded-full shadow-md cursor-pointer group"
+                    >
+                      <span>Our Approach</span>
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    </button>
+                    <button
+                      onClick={navigateToAbout}
+                      className="inline-flex items-center gap-1.5 bg-white hover:bg-[#EAF6FF] text-[#062B55] hover:text-[#087FEA] border border-[#DCEAF5] text-[14px] font-semibold px-5 py-3 rounded-full transition-colors cursor-pointer"
+                    >
+                      <span>About Us →</span>
+                    </button>
+                  </div>
                 </div>
 
                 <div className="lg:col-span-8">
@@ -1044,16 +1091,16 @@ export default function App() {
                 Solutions
               </button>
               <button
+                onClick={navigateToAbout}
+                className="text-[13.5px] font-medium text-[#4B6380] hover:text-[#087FEA] transition-colors cursor-pointer"
+              >
+                About Us
+              </button>
+              <button
                 onClick={() => navigateToHome('industries')}
                 className="text-[13.5px] font-medium text-[#4B6380] hover:text-[#087FEA] transition-colors cursor-pointer"
               >
                 Industries
-              </button>
-              <button
-                onClick={() => navigateToHome('process')}
-                className="text-[13.5px] font-medium text-[#4B6380] hover:text-[#087FEA] transition-colors cursor-pointer"
-              >
-                About
               </button>
               <button
                 onClick={() => navigateToHome('case-study')}
