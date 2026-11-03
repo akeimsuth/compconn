@@ -79,7 +79,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
             <div className="lg:col-span-7 flex flex-col items-start">
               <div className="inline-flex items-center gap-2 text-[#087FEA] bg-[#EAF6FF] px-3.5 py-1.5 rounded-full font-bold text-[12px] tracking-[0.14em] uppercase mb-4 border border-[#DCEAF5]">
                 <Shield className="w-3.5 h-3.5" />
-                <span>About COMPconn • Smarter IT. Stronger Business.</span>
+                <span>About CompConn • Smarter IT. Stronger Business.</span>
               </div>
 
               <h1 className="text-[36px] sm:text-[46px] lg:text-[52px] font-extrabold text-[#062B55] leading-[1.12] tracking-tight mb-5">
@@ -91,7 +91,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
               </p>
 
               <p className="text-[15.5px] sm:text-[16.5px] text-[#4B6380] leading-[1.7] mb-6">
-                COMPconn is an enterprise IT consulting and digital transformation firm dedicated to steering organizations to the forefront of the technological landscape. From fast-growing small and mid-sized enterprises to global corporations, we serve as your trusted technological bridge—transforming complex infrastructure hurdles into streamlined, competitive advantages.
+                CompConn is an enterprise IT consulting and digital transformation firm dedicated to steering organizations to the forefront of the technological landscape. From fast-growing small and mid-sized enterprises to global corporations, we serve as your trusted technological bridge—transforming complex infrastructure hurdles into streamlined, competitive advantages.
               </p>
 
               <p className="text-[15px] sm:text-[16px] text-[#4B6380] leading-[1.7] mb-8">
@@ -200,7 +200,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
                   <div className="w-48 h-48 sm:w-56 sm:h-56 rounded-3xl overflow-hidden border-4 border-white shadow-xl bg-[#062B55]">
                     <img
                       src="/orane.webp"
-                      alt="O'Rane Gray - CEO of COMPconn"
+                      alt="O'Rane Gray - CEO of CompConn"
                       className="w-full h-full object-cover object-top"
                       onError={(e) => {
                         e.currentTarget.onerror = null;
@@ -224,12 +224,12 @@ export const AboutPage: React.FC<AboutPageProps> = ({
 
                 <div className="w-full max-w-[320px] mt-6 pt-6 border-t border-[#DCEAF5] flex justify-around text-center">
                   <div>
-                    <div className="text-xl font-extrabold text-[#062B55]">24+</div>
-                    <div className="text-[11px] text-[#6F8299] uppercase tracking-wider font-semibold">Years in IT</div>
+                    <div className="text-xl font-extrabold text-[#062B55]">40+</div>
+                    <div className="text-[11px] text-[#6F8299] uppercase tracking-wider font-semibold">Certifications</div>
                   </div>
                   <div className="w-[1px] bg-[#DCEAF5]" />
                   <div>
-                    <div className="text-xl font-extrabold text-[#062B55]">100+</div>
+                    <div className="text-xl font-extrabold text-[#062B55]">15+</div>
                     <div className="text-[11px] text-[#6F8299] uppercase tracking-wider font-semibold">Enterprises Served</div>
                   </div>
                 </div>
@@ -248,10 +248,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({
 
                 <div className="space-y-4 text-[15px] sm:text-[16px] text-[#4B6380] leading-[1.7]">
                   <p>
-                    O'Rane Gray is the esteemed CEO of COMPconn, an IT solutions and consulting services company. He is a visionary leader with over 24 years of hands-on and executive experience across the IT industry, dedicated to driving technological advancements and committed to uncompromising excellence.
+                    O'Rane Gray is the esteemed CEO of CompConn, an IT solutions and consulting services company. He is a visionary leader with over 24 years of hands-on and executive experience across the IT industry, dedicated to driving technological advancements and committed to uncompromising excellence.
                   </p>
                   <p>
-                    Under his strategic leadership, COMPconn has steered countless businesses to new heights by delivering cutting-edge solutions and fostering a culture of continuous innovation. Holding a Bachelor's Degree with a double major in Physics and Mathematics from the University of the West Indies (UWI), Mona, his analytical foundation translates into rigorous systems design and rock-solid IT architecture.
+                    Under his strategic leadership, CompConn has steered countless businesses to new heights by delivering cutting-edge solutions and fostering a culture of continuous innovation. Holding a Bachelor's Degree with a double major in Physics and Mathematics from the University of the West Indies (UWI), Mona, his analytical foundation translates into rigorous systems design and rock-solid IT architecture.
                   </p>
                   <p>
                     O'Rane has held notable management positions across both the public and private sectors, including distinguished service as Network Manager for the prestigious Lascelles DeMercado Group. He has also been a passionate champion for retaining premier technical talent, proving that world-class, enterprise-grade IT consultancy can be delivered with absolute integrity and local dedication.
@@ -261,10 +261,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({
                 {/* Quote Callout */}
                 <div className="mt-6 p-5 rounded-2xl bg-[#EAF6FF] border border-[#DCEAF5] relative">
                   <p className="italic text-[#062B55] text-sm sm:text-[15px] font-medium leading-relaxed">
-                    "Our objective at COMPconn is not merely to fix servers or patch software—it is to align technology directly with business goals, eliminate systemic vulnerabilities, and ensure our clients stay agile, secure, and ahead of the curve."
+                    "Our objective at CompConn is not merely to fix servers or patch software—it is to align technology directly with business goals, eliminate systemic vulnerabilities, and ensure our clients stay agile, secure, and ahead of the curve."
                   </p>
                   <span className="block mt-2 text-xs font-bold text-[#087FEA] tracking-wider uppercase">
-                    — O'Rane Gray, CEO of COMPconn
+                    — O'Rane Gray, CEO of CompConn
                   </span>
                 </div>
               </div>
@@ -316,7 +316,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
                   The Forefront of Enterprise Technology
                 </h3>
                 <p className="text-[15.5px] text-slate-200 leading-relaxed">
-                  To stand as the benchmark IT consulting authority—celebrated for visionary innovation, steadfast integrity, and unmatched technical depth. We envision a future where every enterprise is shielded by impenetrable security and empowered by resilient, high-speed infrastructure.
+                  To stand as the benchmark IT consulting authority—celebrated for visionary innovation, steadfast integrity, and unmatched technical depth. We envision a future where every enterprise is shielded and empowered by resilient, high-speed infrastructure.
                 </p>
               </div>
 
@@ -338,7 +338,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
           
           <div className="text-center max-w-[760px] mx-auto mb-14">
             <span className="text-[#087FEA] font-bold text-xs uppercase tracking-widest bg-white border border-[#DCEAF5] px-3.5 py-1 rounded-full">
-              The COMPconn Approach
+              The CompConn Approach
             </span>
             <h2 className="text-[32px] sm:text-[40px] font-extrabold text-[#062B55] mt-3 leading-tight">
               Built on Unbiased Advisory &amp; Engineering Rigor
@@ -445,7 +445,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
               The Principles That Guide Every Engagement
             </h2>
             <p className="text-[#4B6380] text-base sm:text-lg mt-3">
-              Integrity, excellence, and innovation are more than company buzzwords at COMPconn—they form the backbone of our client relationships.
+              Integrity, excellence, and innovation are more than company buzzwords at CompConn—they form the backbone of our client relationships.
             </p>
           </div>
 
@@ -667,7 +667,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
           </div>
 
           <h2 className="text-[32px] sm:text-[44px] font-extrabold text-white leading-tight max-w-[800px] mx-auto mb-4">
-            Partner with COMPconn to Accelerate Your Digital Transformation
+            Partner with CompConn to Accelerate Your Digital Transformation
           </h2>
 
           <p className="text-slate-200 text-base sm:text-lg max-w-[660px] mx-auto mb-8 leading-relaxed">

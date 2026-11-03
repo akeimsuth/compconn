@@ -51,8 +51,8 @@ export const SERVICES: ServiceItem[] = [
       ],
       regionalRelevance: 'Designed specifically to help enterprises modernize legacy operational systems into scalable regional powerhouses.',
       faqs: [
-        { q: 'How does COMPconn align with statutory Data Protection Acts (DPA)?', a: 'Our consultants include certified data privacy advisors who audit your data flows, access controls, and retention rules to ensure full statutory compliance.' },
-        { q: 'Can we retain COMPconn as our virtual Chief Information Officer (vCIO)?', a: 'Yes, we provide ongoing executive technology leadership to attend board meetings and direct your IT roadmap.' }
+        { q: 'How does CompConn align with statutory Data Protection Acts (DPA)?', a: 'Our consultants include certified data privacy advisors who audit your data flows, access controls, and retention rules to ensure full statutory compliance.' },
+        { q: 'Can we retain CompConn as our virtual Chief Information Officer (vCIO)?', a: 'Yes, we provide ongoing executive technology leadership to attend board meetings and direct your IT roadmap.' }
       ]
     }
   },
@@ -239,7 +239,7 @@ export const SERVICES: ServiceItem[] = [
         'Monthly IT Health, Security & Performance Audits',
         'Dedicated Technical Account Manager'
       ],
-      regionalRelevance: 'Allowing business leaders to focus on revenue while COMPconn guarantees technology never stalls.',
+      regionalRelevance: 'Allowing business leaders to focus on revenue while CompConn guarantees technology never stalls.',
       faqs: [
         { q: 'Do you provide on-site support when required?', a: 'Yes! While 95% of issues are resolved remotely in minutes, our field engineers provide rapid on-site dispatch when needed.' },
         { q: 'Can you co-manage IT alongside our existing internal staff?', a: 'Yes, we frequently partner with in-house IT managers to offload routine support and provide tier-3 escalation.' }

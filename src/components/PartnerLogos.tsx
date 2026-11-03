@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 /**
- * High-fidelity vector and asset logos for COMPconn's certified technology partners:
+ * High-fidelity vector and asset logos for CompConn's certified technology partners:
  * 1. Microsoft Partner (microsoft.webp)
  * 2. Fortinet Engage Advocate Partner
  * 3. Sophos Certified Partner

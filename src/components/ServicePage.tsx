@@ -78,7 +78,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
             <div className="lg:col-span-6 flex flex-col items-start">
               <div className="inline-flex items-center gap-2 text-[#087FEA] font-bold text-[12px] tracking-[0.14em] uppercase mb-3">
                 <Shield className="w-4 h-4" />
-                <span>COMPconn Enterprise Solution</span>
+                <span>CompConn Enterprise Solution</span>
               </div>
 
               <h1 className="text-[36px] sm:text-[46px] font-extrabold text-[#062B55] leading-[1.12] tracking-tight mb-4">
@@ -245,7 +245,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                 What Your Organization Receives
               </h2>
               <p className="text-[15px] text-[#4B6380] mb-6 leading-relaxed">
-                Every COMPconn engagement produces concrete, auditable assets that empower your leadership team with complete operational clarity and independence.
+                Every CompConn engagement produces concrete, auditable assets that empower your leadership team with complete operational clarity and independence.
               </p>
 
               <div className="space-y-3 w-full mb-8">
@@ -380,7 +380,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
             Ready to Deploy {service.title}?
           </h2>
           <p className="text-[15.5px] text-blue-100 max-w-[600px] mx-auto mb-8">
-            Consult with COMPconn’s senior technical architects to structure an engagement tailored to your infrastructure and operational budget.
+            Consult with CompConn’s senior technical architects to structure an engagement tailored to your infrastructure and operational budget.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <button

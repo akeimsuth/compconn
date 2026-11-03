@@ -63,7 +63,7 @@ const TESTIMONIALS: TestimonialItem[] = [
   },
   {
     id: '3',
-    quote: "We trust COMPCONN with our data and that says a lot. The team is very honest and reliable. We have no concerns about the team's integrity.",
+    quote: "We trust CompConn with our data and that says a lot. The team is very honest and reliable. We have no concerns about the team's integrity.",
     name: '',
     title: 'CEO',
     company: 'Private',
@@ -210,7 +210,7 @@ export default function App() {
       
       {/* =========================================================================
           1. NAVIGATION BAR
-          Fixed / Sticky with COMPconn Logo, Nav items with Solutions Dropdown, CTA
+          Fixed / Sticky with CompConn Logo, Nav items with Solutions Dropdown, CTA
       ========================================================================= */}
       <header
         className={`sticky top-0 z-40 w-full transition-all duration-300 bg-white/95 backdrop-blur-md ${
@@ -224,12 +224,12 @@ export default function App() {
           <button
             onClick={() => navigateToHome('home')}
             className="flex items-center gap-3 group select-none text-left cursor-pointer"
-            aria-label="COMPconn Home"
+            aria-label="CompConn Home"
           >
               <div className="w-60 h-10 flex items-center justify-center">
                   <img
                     src="/compconn_logo.png"
-                    alt="COMPconn IT Consultant - Smarter IT. Stronger Business."
+                    alt="CompConn IT Consultant - Smarter IT. Stronger Business."
                     referrerPolicy="no-referrer"
                     onError={(e) => {
                       e.currentTarget.onerror = null;
@@ -307,21 +307,9 @@ export default function App() {
               </div>
             </div>
 
-            <button
-              onClick={navigateToAbout}
-              className={`text-[14px] font-semibold transition-colors relative py-1 cursor-pointer ${
-                currentPage === 'about' ? 'text-[#087FEA]' : 'text-[#062B55] hover:text-[#087FEA]'
-              }`}
-            >
-              About Us
-              {currentPage === 'about' && (
-                <span className="absolute bottom-[-6px] left-0 right-0 h-[2.5px] bg-[#087FEA] rounded-full" />
-              )}
-            </button>
-
             {[
-              { label: 'Industries', id: 'industries' },
-              { label: 'Case Studies', id: 'case-study' },
+              { label: 'Services', id: 'industries' },
+              { label: 'Projects', id: 'case-study' },
               { label: 'Contact', id: 'contact' }
             ].map((item) => (
               <button
@@ -337,6 +325,17 @@ export default function App() {
                 )}
               </button>
             ))}
+            <button
+              onClick={navigateToAbout}
+              className={`text-[14px] font-semibold transition-colors relative py-1 cursor-pointer ${
+                currentPage === 'about' ? 'text-[#087FEA]' : 'text-[#062B55] hover:text-[#087FEA]'
+              }`}
+            >
+              About Us
+              {currentPage === 'about' && (
+                <span className="absolute bottom-[-6px] left-0 right-0 h-[2.5px] bg-[#087FEA] rounded-full" />
+              )}
+            </button>
           </nav>
 
           {/* RIGHT ACTION */}
@@ -515,7 +514,7 @@ export default function App() {
                     <div className="relative rounded-[24px] overflow-hidden bg-[#F5FAFE] shadow-[0_16px_44px_rgba(6,43,85,0.12)] border border-[#DCEAF5] group">
                       <img
                         src="/compconn_hero_image.png"
-                        alt="COMPconn IT Consultant - Smarter IT. Stronger Business."
+                        alt="CompConn IT Consultant - Smarter IT. Stronger Business."
                         referrerPolicy="no-referrer"
                         onError={(e) => {
                           e.currentTarget.onerror = null;
@@ -558,8 +557,8 @@ export default function App() {
                     <Building2 className="w-5 h-5 text-[#087FEA]" />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-[26px] sm:text-[28px] font-extrabold text-[#087FEA] leading-none">100+</span>
-                    <span className="text-[12px] sm:text-[13px] font-medium text-[#4B6380] mt-1">Businesses Served</span>
+                    <span className="text-[26px] sm:text-[28px] font-extrabold text-[#087FEA] leading-none">100%</span>
+                    <span className="text-[12px] sm:text-[13px] font-medium text-[#4B6380] mt-1">IT Transformation Success Rate</span>
                   </div>
                 </div>
 
@@ -588,8 +587,8 @@ export default function App() {
                     <ShieldCheck className="w-5 h-5 text-[#087FEA]" />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-[26px] sm:text-[28px] font-extrabold text-[#087FEA] leading-none">24/7</span>
-                    <span className="text-[12px] sm:text-[13px] font-medium text-[#4B6380] mt-1">Dedicated IT Support</span>
+                    <span className="text-[26px] sm:text-[28px] font-extrabold text-[#087FEA] leading-none">{'< 30mins'}</span>
+                    <span className="text-[12px] sm:text-[13px] font-medium text-[#4B6380] mt-1">Response Time</span>
                   </div>
                 </div>
               </div>
@@ -802,7 +801,8 @@ export default function App() {
                       'Custom web application',
                       'Real-time tracking & reporting',
                       'Secure cloud infrastructure',
-                      'Ongoing support & optimization'
+                      'Ongoing support & optimization',
+                      'Projects Completed successfully within established budget and timeline'
                     ].map((item, idx) => (
                       <div key={idx} className="flex items-center gap-3 text-[14.5px] font-medium text-[#062B55]">
                         <CheckCircle2 className="w-5 h-5 text-[#087FEA] shrink-0" />
@@ -815,7 +815,7 @@ export default function App() {
                     onClick={() => setCaseStudyModalOpen(true)}
                     className="inline-flex items-center gap-2 bg-white hover:bg-[#F5FAFE] text-[#087FEA] border border-[#087FEA] text-[14px] font-semibold px-6 py-3 rounded-full transition-all cursor-pointer shadow-sm group"
                   >
-                    <span>View Case Study</span>
+                    <span>View Project</span>
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </button>
                 </div>
@@ -1065,7 +1065,7 @@ export default function App() {
                 <div className="w-60 h-20 flex items-center justify-center">
                   <img
                     src="/compconn_logo.png"
-                    alt="COMPconn IT Consultant - Smarter IT. Stronger Business."
+                    alt="CompConn IT Consultant - Smarter IT. Stronger Business."
                     referrerPolicy="no-referrer"
                     onError={(e) => {
                       e.currentTarget.onerror = null;
@@ -1091,28 +1091,28 @@ export default function App() {
                 Solutions
               </button>
               <button
-                onClick={navigateToAbout}
-                className="text-[13.5px] font-medium text-[#4B6380] hover:text-[#087FEA] transition-colors cursor-pointer"
-              >
-                About Us
-              </button>
-              <button
                 onClick={() => navigateToHome('industries')}
                 className="text-[13.5px] font-medium text-[#4B6380] hover:text-[#087FEA] transition-colors cursor-pointer"
               >
-                Industries
+                Services
               </button>
               <button
                 onClick={() => navigateToHome('case-study')}
                 className="text-[13.5px] font-medium text-[#4B6380] hover:text-[#087FEA] transition-colors cursor-pointer"
               >
-                Case Studies
+                Projects
               </button>
               <button
                 onClick={() => navigateToHome('contact')}
                 className="text-[13.5px] font-medium text-[#4B6380] hover:text-[#087FEA] transition-colors cursor-pointer"
               >
                 Contact
+              </button>
+              <button
+                onClick={navigateToAbout}
+                className="text-[13.5px] font-medium text-[#4B6380] hover:text-[#087FEA] transition-colors cursor-pointer"
+              >
+                About Us
               </button>
             </nav>
 
@@ -1148,7 +1148,7 @@ export default function App() {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 text-[12.5px] text-[#6F8299]">
-            <div>© 2026 COMPCONN. All rights reserved.</div>
+            <div>© 2026 CompConn. All rights reserved.</div>
             <div className="font-medium text-[#062B55]">Technology. People. Progress.</div>
           </div>
         </div>
@@ -1177,7 +1177,7 @@ export default function App() {
                   Book an IT Strategy Session
                 </h3>
                 <p className="text-[14px] text-[#4B6380] mb-6">
-                  Meet directly with COMPconn senior technology consultants in-person or via secure virtual conference.
+                  Meet directly with CompConn senior technology consultants in-person or via secure virtual conference.
                 </p>
 
                 <form onSubmit={handleConsultationSubmit} className="space-y-4">
@@ -1334,7 +1334,7 @@ export default function App() {
               Cloud-Native Freight Dispatch &amp; Shipment Tracking Platform
             </h3>
             <p className="text-[14.5px] text-[#4B6380] leading-[1.65] mb-6">
-              How COMPconn migrated a major regional distribution leader with 8 depots from paper waybills and fragmented phone dispatch to an enterprise cloud dashboard.
+              How CompConn migrated a major regional distribution leader with 8 depots from paper waybills and fragmented phone dispatch to an enterprise cloud dashboard.
             </p>
 
             <div className="grid grid-cols-3 gap-3 mb-6 p-4 rounded-xl bg-[#F5FAFE] border border-[#DCEAF5] text-center">
@@ -1359,7 +1359,7 @@ export default function App() {
               </div>
 
               <div>
-                <h4 className="font-bold text-[#062B55] mb-1">The COMPconn Solution:</h4>
+                <h4 className="font-bold text-[#062B55] mb-1">The CompConn Solution:</h4>
                 <p>Architected a custom real-time GPS fleet dashboard, driver mobile PWA with offline signature capture, and automated SMS notifications to freight recipients.</p>
               </div>
             </div>
@@ -1370,7 +1370,7 @@ export default function App() {
                   setCaseStudyModalOpen(false);
                   openConsultationWithService('Custom Software');
                 }}
-                className="bg-[#087FEA] hover:bg-[#0770D0] text-white text-sm font-semibold px-6 py-2.5 rounded-full cursor-pointer transition-colors"
+                className="bg-[#087FEA] hover:bg-[#0770D0] text-sm text-white font-semibold px-6 py-2.5 rounded-full cursor-pointer transition-colors"
               >
                 Discuss Similar Project
               </button>
@@ -1394,7 +1394,7 @@ export default function App() {
 
             <div className="inline-flex items-center gap-2 text-[#087FEA] text-xs font-bold uppercase tracking-wider mb-2">
               <Send className="w-3.5 h-3.5" />
-              <span>Contact COMPconn</span>
+              <span>Contact CompConn</span>
             </div>
             <h3 className="text-[24px] font-extrabold text-[#062B55] mb-2">
               Let&apos;s Start a Conversation
