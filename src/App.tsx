@@ -34,6 +34,7 @@ import { SERVICES, ServiceItem } from './data/servicesData';
 import { ServicePage } from './components/ServicePage';
 import { AboutPage } from './components/AboutPage';
 import { PARTNERS } from './components/PartnerLogos';
+import { PWAInstallButton } from './components/PWAInstallButton';
 
 interface TestimonialItem {
   id: string;
@@ -339,7 +340,7 @@ export default function App() {
           </nav>
 
           {/* RIGHT ACTION */}
-          <div className="flex items-center gap-3 sm:gap-4">
+          <div className="flex items-center gap-2 sm:gap-3">
             <button
               onClick={() => openConsultationWithService('IT Consulting')}
               className="hidden sm:inline-flex items-center gap-2 bg-[#087FEA] hover:bg-[#0770D0] text-white text-[13.5px] font-semibold px-5 py-2.5 rounded-full shadow-[0_4px_12px_rgba(8,127,234,0.25)] hover:shadow-[0_6px_16px_rgba(8,127,234,0.35)] transition-all duration-200 cursor-pointer transform active:scale-95"

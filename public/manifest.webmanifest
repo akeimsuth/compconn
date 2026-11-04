@@ -1,0 +1,32 @@
+{
+  "id": "/",
+  "name": "CompConn | IT Consulting & Technology Solutions",
+  "short_name": "CompConn",
+  "description": "CompConn helps modern businesses modernize, secure and scale through IT consulting, custom software, cybersecurity, cloud infrastructure, automation and managed IT services.",
+  "theme_color": "#087FEA",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "start_url": "/",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
