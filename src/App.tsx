@@ -309,7 +309,6 @@ export default function App() {
             </div>
 
             {[
-              { label: 'Services', id: 'industries' },
               { label: 'Projects', id: 'case-study' },
               { label: 'Contact', id: 'contact' }
             ].map((item) => (
@@ -607,8 +606,7 @@ export default function App() {
                     Our Services
                   </span>
                   <h2 className="text-[32px] sm:text-[40px] font-extrabold text-[#062B55] leading-[1.15] tracking-tight">
-                    Comprehensive IT Solutions <br className="hidden sm:inline" />
-                    for a Stronger Tomorrow
+                    Comprehensive IT Solutions
                   </h2>
                 </div>
 
