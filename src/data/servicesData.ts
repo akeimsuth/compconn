@@ -1,12 +1,21 @@
+export interface ServiceKpi {
+  label: string;
+  value: string;
+  description: string;
+  targetNote?: string;
+  badge?: string;
+}
+
 export interface ServiceItem {
   id: string;
   title: string;
   tagline: string;
   description: string;
-  iconName: 'users' | 'code' | 'shield' | 'cloud' | 'automation' | 'server';
+  iconName: 'users' | 'code' | 'shield' | 'cloud' | 'automation' | 'server' | 'quantum' | 'awareness';
   image: string;
   secondaryImage: string;
   stats: { label: string; value: string }[];
+  kpis?: ServiceKpi[];
   fullDetails: {
     summary: string;
     benefits: string[];
@@ -103,9 +112,32 @@ export const SERVICES: ServiceItem[] = [
     image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80',
     secondaryImage: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80',
     stats: [
-      { label: 'Threat Block Rate', value: '99.9%' },
-      { label: 'Detection Speed', value: '<5 min' },
-      { label: 'DPA Shield', value: 'Certified' }
+      { label: 'Mean Time to Detect (MTTD)', value: '1 Hour' },
+      { label: 'Mean Time to Respond / Resolve (MTTR)', value: '<5 Hours' },
+      { label: 'Patch Compliance Rate', value: '7 Days' }
+    ],
+    kpis: [
+      {
+        label: 'Mean Time to Detect (MTTD)',
+        value: '1 Hour',
+        description: "Tracks the average time it takes the provider's Security Operations Center (SOC) to identify and begin investigating a security alert or intrusion.",
+        targetNote: 'Target: 1 Hour',
+        badge: 'Detection SLA'
+      },
+      {
+        label: 'Mean Time to Respond / Resolve (MTTR)',
+        value: '<5 Hours',
+        description: 'Measures how quickly the provider neutralizes, contains, or remediates a security incident once it has been detected.',
+        targetNote: 'Target: <5 Hours',
+        badge: 'Containment SLA'
+      },
+      {
+        label: 'Vulnerability Remediation / Patch Compliance Rate',
+        value: '7 Days',
+        description: 'Tracks the percentage of identified critical and high-risk vulnerabilities that are patched or mitigated within an agreed-upon service-level timeframe (7 days).',
+        targetNote: 'SLA: 7-Day Mitigation Timeframe',
+        badge: 'Remediation SLA'
+      }
     ],
     fullDetails: {
       summary: 'Defense-in-depth security architectures, employee phishing simulations, endpoint hardening, vulnerability penetration tests, and incident response.',
@@ -243,6 +275,84 @@ export const SERVICES: ServiceItem[] = [
       faqs: [
         { q: 'Do you provide on-site support when required?', a: 'Yes! While 95% of issues are resolved remotely in minutes, our field engineers provide rapid on-site dispatch when needed.' },
         { q: 'Can you co-manage IT alongside our existing internal staff?', a: 'Yes, we frequently partner with in-house IT managers to offload routine support and provide tier-3 escalation.' }
+      ]
+    }
+  },
+  {
+    id: 'quantum-agility',
+    title: 'Quantum Agility',
+    tagline: 'Cryptographic Estate Discovery, Post-Quantum Roadmap & Quantum Agility',
+    description: 'We discover businesses cryptographic estate, develop Post-Quantum roadmap and implement quantum agility.',
+    iconName: 'quantum',
+    image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=1200&q=80',
+    secondaryImage: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80',
+    stats: [
+      { label: 'Estate Visibility', value: '100%' },
+      { label: 'PQC Readiness', value: 'NIST-Aligned' },
+      { label: 'Crypto-Agility', value: 'Modular' }
+    ],
+    fullDetails: {
+      summary: 'We discover your business\'s cryptographic estate, develop a comprehensive Post-Quantum roadmap, and implement quantum agility across your enterprise architecture to protect against emerging quantum computing decryption risks.',
+      benefits: [
+        'Complete inventory of certificates, cipher suites, tokens, and cryptographic assets across your enterprise',
+        'Mitigate "Harvest Now, Decrypt Later" (HNDL) attacks targeting long-term confidential business records',
+        'Prioritized Post-Quantum Cryptography (PQC) migration roadmap adhering to emerging NIST standards',
+        'Modular crypto-agile architecture enabling swift algorithmic swapping without system re-architecting'
+      ],
+      capabilities: [
+        { title: 'Cryptographic Estate Discovery', desc: 'Automated scanning and cataloging of all asymmetric keys, public-key algorithms, TLS certificates, and HSM configurations across cloud and on-premise infrastructure.' },
+        { title: 'Post-Quantum Roadmap Development', desc: 'Risk-prioritized migration strategy identifying vulnerable long-lived data, regulatory compliance milestones, and phased implementation of quantum-safe algorithms.' },
+        { title: 'Quantum Agility Implementation', desc: 'Deploying modular abstraction layers and crypto-agile security frameworks so your systems can rotate cryptographic primitives seamlessly as standards advance.' }
+      ],
+      deliverables: [
+        'Cryptographic Bill of Materials (CBOM) & Asset Catalog',
+        'Post-Quantum Transition Roadmap & Risk Matrix',
+        'Crypto-Agile Architecture Reference Blueprint & Implementation Plan'
+      ],
+      regionalRelevance: 'Guarding critical corporate data, proprietary IP, and financial transactions against the quantum transition before regulatory mandates take effect.',
+      faqs: [
+        { q: 'Why do we need Quantum Agility now if quantum computers are still evolving?', a: 'Adversaries are actively executing "Harvest Now, Decrypt Later" attacks—exfiltrating encrypted confidential business data today to decrypt it once quantum decryption becomes viable. Transitioning enterprise cryptography takes years, making early action essential.' },
+        { q: 'What is cryptographic estate discovery?', a: 'It is the rigorous discovery, identification, and cataloging of every cryptographic algorithm, key, certificate, and protocol deployed across your applications, servers, databases, and networks.' },
+        { q: 'What does implementing "quantum agility" mean for our systems?', a: 'Quantum agility creates a modular architecture where cryptographic algorithms can be swapped or upgraded with minimal operational disruption and without having to rewrite underlying application code.' }
+      ]
+    }
+  },
+  {
+    id: 'quantum-era-awareness',
+    title: 'Quantum Era Awareness',
+    tagline: 'Strategic Education & Board Governance for the Emerging Quantum Threat Landscape',
+    description: 'Quantum Era awareness, threat landscape education, and governance workshops for executives and business leaders.',
+    iconName: 'awareness',
+    image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80',
+    secondaryImage: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80',
+    stats: [
+      { label: 'Executive Briefings', value: 'Board-Ready' },
+      { label: 'Governance Impact', value: '100% Clarity' },
+      { label: 'Threat Translation', value: 'Jargon-Free' }
+    ],
+    fullDetails: {
+      summary: 'Tailored executive briefings and interactive governance workshops designed to demystify the emerging quantum computing threat landscape, establish corporate risk governance, and guide senior leadership in strategic cybersecurity planning.',
+      benefits: [
+        'Executive and board-level clarity on quantum decryption timelines, Q-Day implications, and commercial risk',
+        'Fiduciary compliance and cyber governance preparedness for board audit and risk committees',
+        'Strategic capital allocation guidance to prevent costly last-minute emergency migrations',
+        'Empowered business leaders capable of evaluating vendor and partner quantum readiness'
+      ],
+      capabilities: [
+        { title: 'Executive Threat Briefings', desc: 'High-impact, business-focused sessions translating quantum physics and cryptographic risks into boardroom-ready risk models and commercial implications.' },
+        { title: 'Board Risk & Governance Workshops', desc: 'Structured guidance to integrate quantum security risks into enterprise risk management (ERM) frameworks, corporate disclosures, and fiduciary oversight.' },
+        { title: 'Vendor & Supply Chain Quantum Diligence', desc: 'Equipping procurement, legal, and technology leaders with audit questionnaires and contract riders to evaluate third-party software vendor preparedness.' }
+      ],
+      deliverables: [
+        'Executive Quantum Risk Briefing Deck & Summary Report',
+        'Board-Level Quantum Cybersecurity Governance Checklist',
+        'Third-Party Vendor Quantum Readiness Audit Questionnaire'
+      ],
+      regionalRelevance: 'Positioning executive boards and business leaders at the forefront of digital resilience and forward-looking enterprise security.',
+      faqs: [
+        { q: 'Who should attend Quantum Era awareness sessions?', a: 'CEOs, CFOs, Chief Risk Officers, CIOs, CISOs, board directors, general counsel, and enterprise business unit leaders responsible for data confidentiality and long-term compliance.' },
+        { q: 'Are these briefings technical or business-oriented?', a: 'Our sessions are specifically crafted for executives and business leaders, translating complex technical concepts into clear risk registers, budget considerations, and governance actions.' },
+        { q: 'Can sessions be delivered in-person or virtually?', a: 'Yes, we provide interactive executive board retreats, keynote presentations, and remote virtual workshops tailored to your organization\'s schedule.' }
       ]
     }
   }

@@ -28,13 +28,15 @@ import {
   Check,
   Send,
   Laptop,
-  ChevronDown
+  ChevronDown,
+  Atom,
+  CircuitBoard
 } from 'lucide-react';
 import { SERVICES, ServiceItem } from './data/servicesData';
 import { ServicePage } from './components/ServicePage';
 import { AboutPage } from './components/AboutPage';
+import { ProjectsPage } from './components/ProjectsPage';
 import { PARTNERS } from './components/PartnerLogos';
-import { PWAInstallButton } from './components/PWAInstallButton';
 
 interface TestimonialItem {
   id: string;
@@ -107,6 +109,11 @@ export default function App() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
         return;
       }
+      if (hash === 'projects' || hash === 'portfolio') {
+        setCurrentPage('projects');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
       if (hash.startsWith('services/')) {
         const serviceId = hash.replace('services/', '');
         if (SERVICES.some((s) => s.id === serviceId)) {
@@ -163,6 +170,14 @@ export default function App() {
     setSolutionsDropdownOpen(false);
     setCurrentPage('about');
     window.location.hash = '#/about-us';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const navigateToProjects = () => {
+    setMobileMenuOpen(false);
+    setSolutionsDropdownOpen(false);
+    setCurrentPage('projects');
+    window.location.hash = '#/projects';
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -274,31 +289,31 @@ export default function App() {
               {/* Mega Dropdown Panel */}
               <div
                 onMouseLeave={() => setSolutionsDropdownOpen(false)}
-                className={`absolute top-full -left-20 w-[420px] bg-white rounded-2xl border border-[#DCEAF5] shadow-[0_16px_36px_rgba(6,43,85,0.12)] p-4 transition-all duration-200 z-50 ${
+                className={`absolute top-full -left-28 w-[580px] bg-white rounded-2xl border border-[#DCEAF5] shadow-[0_16px_36px_rgba(6,43,85,0.12)] p-4 transition-all duration-200 z-50 ${
                   solutionsDropdownOpen ? 'opacity-100 visible translate-y-2' : 'opacity-0 invisible pointer-events-none'
                 }`}
               >
                 <div className="text-xs font-bold text-[#6F8299] uppercase tracking-wider px-2 pb-2 mb-2 border-b border-slate-100 flex items-center justify-between">
                   <span>Our Service Lines</span>
-                  <span className="text-[#087FEA]">6 Core Areas</span>
+                  <span className="text-[#087FEA]">8 Core Areas</span>
                 </div>
-                <div className="grid grid-cols-1 gap-1">
+                <div className="grid grid-cols-2 gap-1.5">
                   {SERVICES.map((s) => (
                     <button
                       key={s.id}
                       onClick={() => navigateToService(s.id)}
-                      className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-[#F5FAFE] transition-colors text-left cursor-pointer group/item"
+                      className="flex items-center gap-2.5 p-2 rounded-xl hover:bg-[#F5FAFE] transition-colors text-left cursor-pointer group/item"
                     >
                       <img
                         src={s.image}
                         alt=""
-                        className="w-10 h-10 rounded-lg object-cover border border-[#DCEAF5]"
+                        className="w-9 h-9 rounded-lg object-cover border border-[#DCEAF5] shrink-0"
                       />
-                      <div className="flex flex-col">
-                        <span className="text-sm font-bold text-[#062B55] group-hover/item:text-[#087FEA] transition-colors">
+                      <div className="flex flex-col min-w-0">
+                        <span className="text-xs sm:text-[13px] font-bold text-[#062B55] group-hover/item:text-[#087FEA] transition-colors truncate">
                           {s.title}
                         </span>
-                        <span className="text-xs text-[#6F8299] line-clamp-1">
+                        <span className="text-[11px] text-[#6F8299] line-clamp-1">
                           {s.description}
                         </span>
                       </div>
@@ -308,23 +323,29 @@ export default function App() {
               </div>
             </div>
 
-            {[
-              { label: 'Projects', id: 'case-study' },
-              { label: 'Contact', id: 'contact' }
-            ].map((item) => (
-              <button
-                key={item.id}
-                onClick={() => navigateToHome(item.id)}
-                className={`text-[14px] font-semibold transition-colors relative py-1 cursor-pointer ${
-                  currentPage === 'home' && activeSection === item.id ? 'text-[#087FEA]' : 'text-[#062B55] hover:text-[#087FEA]'
-                }`}
-              >
-                {item.label}
-                {currentPage === 'home' && activeSection === item.id && (
-                  <span className="absolute bottom-[-6px] left-0 right-0 h-[2.5px] bg-[#087FEA] rounded-full" />
-                )}
-              </button>
-            ))}
+            <button
+              onClick={navigateToProjects}
+              className={`text-[14px] font-semibold transition-colors relative py-1 cursor-pointer ${
+                currentPage === 'projects' ? 'text-[#087FEA]' : 'text-[#062B55] hover:text-[#087FEA]'
+              }`}
+            >
+              Projects
+              {currentPage === 'projects' && (
+                <span className="absolute bottom-[-6px] left-0 right-0 h-[2.5px] bg-[#087FEA] rounded-full" />
+              )}
+            </button>
+
+            <button
+              onClick={() => navigateToHome('contact')}
+              className={`text-[14px] font-semibold transition-colors relative py-1 cursor-pointer ${
+                currentPage === 'home' && activeSection === 'contact' ? 'text-[#087FEA]' : 'text-[#062B55] hover:text-[#087FEA]'
+              }`}
+            >
+              Contact
+              {currentPage === 'home' && activeSection === 'contact' && (
+                <span className="absolute bottom-[-6px] left-0 right-0 h-[2.5px] bg-[#087FEA] rounded-full" />
+              )}
+            </button>
             <button
               onClick={navigateToAbout}
               className={`text-[14px] font-semibold transition-colors relative py-1 cursor-pointer ${
@@ -389,6 +410,22 @@ export default function App() {
               </div>
 
               <button
+                onClick={navigateToProjects}
+                className={`text-left text-[15px] font-semibold py-2 px-3 rounded-lg cursor-pointer ${
+                  currentPage === 'projects' ? 'bg-[#EAF6FF] text-[#087FEA]' : 'text-[#062B55] hover:bg-slate-50'
+                }`}
+              >
+                Projects
+              </button>
+
+              <button
+                onClick={() => navigateToHome('contact')}
+                className="text-left text-[15px] font-semibold py-2 px-3 rounded-lg text-[#062B55] hover:bg-slate-50 cursor-pointer"
+              >
+                Contact
+              </button>
+
+              <button
                 onClick={navigateToAbout}
                 className={`text-left text-[15px] font-semibold py-2 px-3 rounded-lg cursor-pointer ${
                   currentPage === 'about' ? 'bg-[#EAF6FF] text-[#087FEA]' : 'text-[#062B55] hover:bg-slate-50'
@@ -396,20 +433,6 @@ export default function App() {
               >
                 About Us
               </button>
-
-              {[
-                { label: 'Industries', id: 'industries' },
-                { label: 'Case Studies', id: 'case-study' },
-                { label: 'Contact', id: 'contact' }
-              ].map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => navigateToHome(item.id)}
-                  className="text-left text-[15px] font-semibold py-2 px-3 rounded-lg text-[#062B55] hover:bg-slate-50 cursor-pointer"
-                >
-                  {item.label}
-                </button>
-              ))}
 
               <div className="pt-3 border-t border-slate-100 flex flex-col gap-2">
                 <button
@@ -432,12 +455,17 @@ export default function App() {
       </header>
 
       {/* =========================================================================
-          VIEW ROUTING: DEDICATED ABOUT US PAGE, INDIVIDUAL SERVICE PAGE, OR HOMEPAGE
+          VIEW ROUTING: DEDICATED ABOUT US PAGE, PROJECTS PAGE, INDIVIDUAL SERVICE PAGE, OR HOMEPAGE
       ========================================================================= */}
       {currentPage === 'about' ? (
         <AboutPage
           onBackToHome={() => navigateToHome('home')}
           onSelectService={(serviceId) => navigateToService(serviceId)}
+          onBookConsultation={(svc) => openConsultationWithService(svc)}
+        />
+      ) : currentPage === 'projects' ? (
+        <ProjectsPage
+          onBackToHome={() => navigateToHome('home')}
           onBookConsultation={(svc) => openConsultationWithService(svc)}
         />
       ) : currentPage !== 'home' && currentServiceObj ? (
@@ -577,7 +605,7 @@ export default function App() {
                     <Lightbulb className="w-5 h-5 text-[#087FEA]" />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-[26px] sm:text-[28px] font-extrabold text-[#087FEA] leading-none">6</span>
+                    <span className="text-[26px] sm:text-[28px] font-extrabold text-[#087FEA] leading-none">8</span>
                     <span className="text-[12px] sm:text-[13px] font-medium text-[#4B6380] mt-1">Core Service Areas</span>
                   </div>
                 </div>
@@ -596,7 +624,7 @@ export default function App() {
           </section>
 
           {/* =========================================================================
-              4. SERVICES SECTION: 3X2 GRID WITH DEDICATED PAGE LINKS
+              4. SERVICES SECTION: 8 CORE SOLUTIONS GRID WITH DEDICATED PAGE LINKS
           ========================================================================= */}
           <section id="solutions" className="py-20 md:py-24 bg-white">
             <div className="max-w-[1260px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -620,8 +648,8 @@ export default function App() {
                 From strategy to support, we provide end-to-end technology solutions designed to help your business operate smarter, safer and grow faster. Click any service to view its dedicated overview page.
               </p>
 
-              {/* 3x2 Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+              {/* Services Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-7">
                 {SERVICES.map((service) => {
                   const renderIcon = () => {
                     switch (service.iconName) {
@@ -631,6 +659,8 @@ export default function App() {
                       case 'cloud': return <Cloud className="w-6 h-6 text-[#087FEA]" />;
                       case 'automation': return <Settings2 className="w-6 h-6 text-[#087FEA]" />;
                       case 'server': return <Server className="w-6 h-6 text-[#087FEA]" />;
+                      case 'quantum': return <Atom className="w-6 h-6 text-[#087FEA]" />;
+                      case 'awareness': return <CircuitBoard className="w-6 h-6 text-[#087FEA]" />;
                     }
                   };
 
@@ -810,13 +840,23 @@ export default function App() {
                     ))}
                   </div>
 
-                  <button
-                    onClick={() => setCaseStudyModalOpen(true)}
-                    className="inline-flex items-center gap-2 bg-white hover:bg-[#F5FAFE] text-[#087FEA] border border-[#087FEA] text-[14px] font-semibold px-6 py-3 rounded-full transition-all cursor-pointer shadow-sm group"
-                  >
-                    <span>View Project</span>
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </button>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <button
+                      onClick={() => setCaseStudyModalOpen(true)}
+                      className="inline-flex items-center gap-2 bg-white hover:bg-[#F5FAFE] text-[#087FEA] border border-[#087FEA] text-[14px] font-semibold px-6 py-3 rounded-full transition-all cursor-pointer shadow-sm group"
+                    >
+                      <span>View Case Study</span>
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    </button>
+
+                    <button
+                      onClick={navigateToProjects}
+                      className="inline-flex items-center gap-2 bg-[#087FEA] hover:bg-[#0770D0] text-white text-[14px] font-semibold px-6 py-3 rounded-full transition-all cursor-pointer shadow-sm group"
+                    >
+                      <span>Explore All Projects</span>
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    </button>
+                  </div>
                 </div>
 
                 {/* Right Metrics Card */}
@@ -1096,7 +1136,7 @@ export default function App() {
                 Services
               </button>
               <button
-                onClick={() => navigateToHome('case-study')}
+                onClick={navigateToProjects}
                 className="text-[13.5px] font-medium text-[#4B6380] hover:text-[#087FEA] transition-colors cursor-pointer"
               >
                 Projects

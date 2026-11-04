@@ -8,7 +8,8 @@ import {
   Shield,
   Layers,
   MapPin,
-  TrendingUp
+  TrendingUp,
+  Activity
 } from 'lucide-react';
 import { ServiceItem, SERVICES } from '../data/servicesData';
 
@@ -113,13 +114,13 @@ export const ServicePage: React.FC<ServicePageProps> = ({
               </div>
 
               {/* Verified Metrics Strip */}
-              <div className="grid grid-cols-3 gap-4 w-full pt-4 border-t border-[#DCEAF5]">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full pt-4 border-t border-[#DCEAF5]">
                 {service.stats.map((st, i) => (
                   <div key={i} className="flex flex-col">
-                    <span className="text-[24px] sm:text-[28px] font-extrabold text-[#087FEA] leading-none">
+                    <span className="text-[22px] sm:text-[26px] font-extrabold text-[#087FEA] leading-tight">
                       {st.value}
                     </span>
-                    <span className="text-[12px] text-[#6F8299] font-medium mt-1">
+                    <span className="text-[12px] text-[#6F8299] font-medium mt-1 leading-tight">
                       {st.label}
                     </span>
                   </div>
@@ -162,6 +163,71 @@ export const ServicePage: React.FC<ServicePageProps> = ({
           </div>
         </div>
       </section>
+
+      {/* =========================================================================
+          KEY PERFORMANCE INDICATORS (KPIS) & SLA BENCHMARKS
+      ========================================================================= */}
+      {service.kpis && service.kpis.length > 0 && (
+        <section className="py-14 md:py-16 bg-[#F8FBFE] border-b border-[#DCEAF5]">
+          <div className="max-w-[1260px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+              <div>
+                <div className="inline-flex items-center gap-2 text-[#087FEA] font-bold text-[12px] tracking-[0.14em] uppercase mb-2">
+                  <Activity className="w-4 h-4" />
+                  <span>Service Benchmarks &amp; SLAs</span>
+                </div>
+                <h2 className="text-[28px] sm:text-[34px] font-extrabold text-[#062B55] leading-tight">
+                  Key Performance Indicators (KPIs)
+                </h2>
+              </div>
+              <div className="flex items-center gap-2 text-xs font-semibold text-[#062B55] bg-white px-3.5 py-1.5 rounded-full border border-[#DCEAF5] shadow-xs self-start md:self-auto">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span>Security Operations Center (SOC) Verified</span>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {service.kpis.map((kpi, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white rounded-[22px] p-7 sm:p-8 border border-[#DCEAF5] shadow-[0_4px_20px_rgba(6,43,85,0.04)] hover:border-[#087FEA]/50 hover:shadow-[0_12px_28px_rgba(8,127,234,0.12)] transition-all flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="flex items-center justify-between gap-3 mb-4">
+                      {kpi.badge ? (
+                        <span className="inline-block text-[11px] font-bold tracking-wider uppercase bg-[#EAF6FF] text-[#087FEA] px-3 py-1 rounded-full border border-[#DCEAF5]">
+                          {kpi.badge}
+                        </span>
+                      ) : <span />}
+                      <span className="text-xs font-semibold text-[#6F8299]">KPI #{idx + 1}</span>
+                    </div>
+
+                    <div className="mb-4">
+                      <div className="text-[32px] sm:text-[36px] font-extrabold text-[#087FEA] leading-tight tracking-tight">
+                        {kpi.value}
+                      </div>
+                      <h3 className="text-[17px] sm:text-[18px] font-bold text-[#062B55] mt-1 leading-snug">
+                        {kpi.label}
+                      </h3>
+                    </div>
+
+                    <p className="text-[14.5px] text-[#4B6380] leading-[1.65]">
+                      {kpi.description}
+                    </p>
+                  </div>
+
+                  {kpi.targetNote && (
+                    <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-semibold text-[#062B55]">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                      <span>{kpi.targetNote}</span>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* =========================================================================
           3. CORE CAPABILITIES (BENTO GRID)
