@@ -343,10 +343,6 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
                             <span>{project.association}</span>
                           </div>
                         )}
-                        <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200/80 px-2.5 py-1 rounded-full shadow-xs">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                          <span>Completed within established budget &amp; timeline</span>
-                        </div>
                       </div>
 
                       {/* Verbatim Description */}

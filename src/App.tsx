@@ -1157,7 +1157,7 @@ export default function App() {
 
             <div className="flex items-center gap-3">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/compconn/"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
