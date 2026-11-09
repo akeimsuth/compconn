@@ -100,14 +100,16 @@ export const AboutPage: React.FC<AboutPageProps> = ({
 
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4">
-                <button
-                  onClick={() => onBookConsultation('IT Consulting')}
+                <a
+                  href="https://calendly.com/compconn"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2.5 bg-[#087FEA] hover:bg-[#0770D0] text-white text-[14.5px] font-semibold px-7 py-3.5 rounded-full shadow-[0_6px_18px_rgba(8,127,234,0.28)] hover:shadow-[0_8px_24px_rgba(8,127,234,0.36)] transition-all cursor-pointer group"
                 >
                   <Calendar className="w-4 h-4" />
                   <span>Schedule Executive Consultation</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </button>
+                </a>
 
                 <a
                   href="#philosophy"
@@ -675,14 +677,16 @@ export const AboutPage: React.FC<AboutPageProps> = ({
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <button
-              onClick={() => onBookConsultation('IT Consulting')}
+            <a
+              href="https://calendly.com/compconn"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2.5 bg-[#087FEA] hover:bg-[#0770D0] text-white font-bold text-sm sm:text-base px-8 py-4 rounded-full shadow-[0_8px_24px_rgba(8,127,234,0.4)] transition-all cursor-pointer group"
             >
               <Calendar className="w-5 h-5" />
               <span>Book Your Strategy Consultation</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </button>
+            </a>
 
             <button
               onClick={onBackToHome}

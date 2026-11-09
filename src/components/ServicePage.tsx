@@ -96,14 +96,16 @@ export const ServicePage: React.FC<ServicePageProps> = ({
 
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4 mb-8">
-                <button
-                  onClick={() => onBookConsultation(service.title)}
+                <a
+                  href="https://calendly.com/compconn"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2.5 bg-[#087FEA] hover:bg-[#0770D0] text-white text-[14.5px] font-semibold px-7 py-3.5 rounded-full shadow-[0_6px_18px_rgba(8,127,234,0.28)] hover:shadow-[0_8px_24px_rgba(8,127,234,0.36)] transition-all cursor-pointer group"
                 >
                   <Calendar className="w-4 h-4" />
                   <span>Book a Consultation</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </button>
+                </a>
 
                 <a
                   href="#capabilities"
@@ -449,12 +451,15 @@ export const ServicePage: React.FC<ServicePageProps> = ({
             Consult with CompConn’s senior technical architects to structure an engagement tailored to your infrastructure and operational budget.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <button
-              onClick={() => onBookConsultation(service.title)}
-              className="bg-[#087FEA] hover:bg-[#0770D0] text-white font-semibold text-sm px-8 py-3.5 rounded-full shadow-lg transition-all cursor-pointer"
+            <a
+              href="https://calendly.com/compconn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#087FEA] hover:bg-[#0770D0] text-white font-semibold text-sm px-8 py-3.5 rounded-full shadow-lg transition-all cursor-pointer"
             >
-              Schedule Discovery Meeting
-            </button>
+              <Calendar className="w-4 h-4" />
+              <span>Schedule Discovery Meeting</span>
+            </a>
             <button
               onClick={onBackToHome}
               className="bg-transparent hover:bg-white/10 text-white border border-white/40 font-semibold text-sm px-7 py-3.5 rounded-full transition-all cursor-pointer"

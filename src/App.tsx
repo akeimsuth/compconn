@@ -205,10 +205,8 @@ export default function App() {
     }, 700);
   };
 
-  const openConsultationWithService = (serviceTitle: string) => {
-    setFormData((prev) => ({ ...prev, service: serviceTitle }));
-    setFormSubmitted(false);
-    setConsultationModalOpen(true);
+  const openConsultationWithService = (_serviceTitle?: string) => {
+    window.open('https://calendly.com/compconn', '_blank', 'noopener,noreferrer');
   };
 
   const nextTestimonial = () => {
@@ -361,13 +359,15 @@ export default function App() {
 
           {/* RIGHT ACTION */}
           <div className="flex items-center gap-2 sm:gap-3">
-            <button
-              onClick={() => openConsultationWithService('IT Consulting')}
+            <a
+              href="https://calendly.com/compconn"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden sm:inline-flex items-center gap-2 bg-[#087FEA] hover:bg-[#0770D0] text-white text-[13.5px] font-semibold px-5 py-2.5 rounded-full shadow-[0_4px_12px_rgba(8,127,234,0.25)] hover:shadow-[0_6px_16px_rgba(8,127,234,0.35)] transition-all duration-200 cursor-pointer transform active:scale-95"
             >
               <Calendar className="w-4 h-4" />
               <span>Book a Consultation</span>
-            </button>
+            </a>
 
             {/* Hamburger Button */}
             <button
@@ -435,16 +435,16 @@ export default function App() {
               </button>
 
               <div className="pt-3 border-t border-slate-100 flex flex-col gap-2">
-                <button
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    openConsultationWithService('IT Consulting');
-                  }}
-                  className="w-full flex items-center justify-center gap-2 bg-[#087FEA] hover:bg-[#0770D0] text-white text-[14px] font-semibold py-3 rounded-full shadow-md"
+                <a
+                  href="https://calendly.com/compconn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="w-full flex items-center justify-center gap-2 bg-[#087FEA] hover:bg-[#0770D0] text-white text-[14px] font-semibold py-3 rounded-full shadow-md cursor-pointer"
                 >
                   <Calendar className="w-4 h-4" />
                   <span>Book a Consultation</span>
-                </button>
+                </a>
                 <div className="text-center text-xs text-[#6F8299] pt-1">
                   Enterprise Support • 876-670-6444
                 </div>
@@ -511,13 +511,16 @@ export default function App() {
                   </p>
 
                   <div className="flex flex-wrap items-center gap-4 mb-8">
-                    <button
-                      onClick={() => openConsultationWithService('General IT Strategy')}
+                    <a
+                      href="https://calendly.com/compconn"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center justify-center gap-2.5 bg-[#087FEA] hover:bg-[#0770D0] text-white text-[14.5px] font-semibold px-7 py-3.5 rounded-full shadow-[0_6px_18px_rgba(8,127,234,0.28)] hover:shadow-[0_8px_24px_rgba(8,127,234,0.36)] transition-all duration-200 cursor-pointer transform hover:-translate-y-0.5 group"
                     >
+                      <Calendar className="w-4 h-4" />
                       <span>Book a Consultation</span>
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </button>
+                    </a>
 
                     <button
                       onClick={() => navigateToHome('solutions')}
@@ -1038,13 +1041,16 @@ export default function App() {
                   </p>
 
                   <div className="flex flex-wrap items-center gap-4 mb-4">
-                    <button
-                      onClick={() => openConsultationWithService('Executive IT Strategy')}
+                    <a
+                      href="https://calendly.com/compconn"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 bg-[#087FEA] hover:bg-[#0770D0] text-white text-[14.5px] font-semibold px-7 py-3.5 rounded-full shadow-[0_6px_18px_rgba(8,127,234,0.28)] hover:shadow-[0_8px_24px_rgba(8,127,234,0.36)] transition-all cursor-pointer transform hover:-translate-y-0.5 group"
                     >
+                      <Calendar className="w-4 h-4" />
                       <span>Book a Consultation</span>
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </button>
+                    </a>
 
                     <button
                       onClick={() => setContactModalOpen(true)}
@@ -1215,9 +1221,21 @@ export default function App() {
                 <h3 className="text-[24px] font-extrabold text-[#062B55] leading-snug mb-2">
                   Book an IT Strategy Session
                 </h3>
-                <p className="text-[14px] text-[#4B6380] mb-6">
+                <p className="text-[14px] text-[#4B6380] mb-4">
                   Meet directly with CompConn senior technology consultants in-person or via secure virtual conference.
                 </p>
+
+                <div className="mb-5 p-3 rounded-xl bg-[#F5FAFE] border border-[#DCEAF5] flex items-center justify-between gap-3">
+                  <span className="text-xs text-[#062B55] font-medium">Instant self-scheduling:</span>
+                  <a
+                    href="https://calendly.com/compconn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs font-bold text-white bg-[#087FEA] hover:bg-[#0770D0] px-3 py-1.5 rounded-full transition-colors shrink-0"
+                  >
+                    Open Calendly →
+                  </a>
+                </div>
 
                 <form onSubmit={handleConsultationSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -1471,15 +1489,15 @@ export default function App() {
               </div>
             </div>
 
-            <button
-              onClick={() => {
-                setContactModalOpen(false);
-                openConsultationWithService('IT Consulting');
-              }}
-              className="w-full bg-[#087FEA] hover:bg-[#0770D0] text-white font-semibold py-3 rounded-full text-center text-sm shadow-md cursor-pointer transition-colors"
+            <a
+              href="https://calendly.com/compconn"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setContactModalOpen(false)}
+              className="w-full bg-[#087FEA] hover:bg-[#0770D0] text-white font-semibold py-3 rounded-full text-center text-sm shadow-md cursor-pointer transition-colors block"
             >
               Or Book Formal Consultation
-            </button>
+            </a>
           </div>
         </div>
       )}

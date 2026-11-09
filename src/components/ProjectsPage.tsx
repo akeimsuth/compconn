@@ -420,13 +420,15 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
                         Enterprise Implementation
                       </span>
 
-                      <button
-                        onClick={() => onBookConsultation(`Consultation regarding: ${project.title}`)}
+                      <a
+                        href="https://calendly.com/compconn"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 text-xs sm:text-[13px] font-bold text-[#087FEA] hover:text-[#0770D0] transition-colors cursor-pointer group/btn"
                       >
                         <span>Discuss Similar Project</span>
                         <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
-                      </button>
+                      </a>
                     </div>
                   </div>
                 );
@@ -454,13 +456,15 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button
-                onClick={() => onBookConsultation('IT Consulting')}
+              <a
+                href="https://calendly.com/compconn"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#087FEA] hover:bg-[#0770D0] text-white text-[14.5px] font-semibold px-7 py-3.5 rounded-full shadow-[0_4px_16px_rgba(8,127,234,0.3)] hover:shadow-[0_6px_20px_rgba(8,127,234,0.4)] transition-all cursor-pointer transform active:scale-95"
               >
                 <Calendar className="w-4 h-4" />
                 <span>Book a Project Consultation</span>
-              </button>
+              </a>
 
               <button
                 onClick={onBackToHome}
